@@ -58,7 +58,6 @@ public class merge_sorted_array {
         for (int j = 0; j < nums1.length; j++) {
             System.out.println(nums1[j] + "\n");
         }
-        return;
     }
 
     public static void main(String[] args) {
@@ -78,8 +77,13 @@ public class merge_sorted_array {
         }
         System.out.println("Enter the sorted array nums2: ");
         int nums2[] = new int[n];
-        for (int j = 0; j < n; j++) {
-            nums2[j] = s.nextInt();
+        if (n > 0) {
+            for (int j = 0; j < n; j++) {
+                nums2[j] = s.nextInt();
+            }
+        } else {
+            System.out.println("ERROR: Second sorted array cannot be null");
+            return;
         }
         System.out.println("The merged sorted array is: ");
         merge(nums1, m, nums2, n);
