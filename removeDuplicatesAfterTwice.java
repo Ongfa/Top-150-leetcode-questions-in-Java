@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * Given an integer array nums sorted in non-decreasing order, remove some duplicates in-place such that each unique element appears at most twice. The relative order of the elements should be kept the same.
  *
@@ -49,6 +47,8 @@ import java.util.Scanner;
  *     -104 <= nums[i] <= 104
  *     nums is sorted in non-decreasing order.
  */
+
+import java.util.Scanner;
 
 public class removeDuplicatesAfterTwice {
     public static int[] removeSortedArrayDuplicates(int[] nums) {
