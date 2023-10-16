@@ -43,49 +43,49 @@
 
 import java.util.Scanner;
 public class merge_sorted_array {
-    public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int p1 = m - 1, p2 = n - 1, i = nums1.length - 1;
-        while (p1 >= 0 && p2 >= 0) {
-            if(nums1[p1] > nums2[p2]) {
-                nums1[i--] = nums1[p1--];
+    public static void merge(int[] firstArray, int m, int[] secondArray, int n) {
+        int pointer1 = m - 1, pointer2 = n - 1, i = firstArray.length - 1;
+        while (pointer1 >= 0 && pointer2 >= 0) {
+            if(firstArray[pointer1] > secondArray[pointer2]) {
+                firstArray[i--] = firstArray[pointer1--];
             } else {
-                nums1[i--] = nums2[p2--];
+                firstArray[i--] = secondArray[pointer2--];
             }
         }
-        while(p2 >= 0) {
-            nums1[i--] = nums2[p2--];
+        while(pointer2 >= 0) {
+            firstArray[i--] = secondArray[pointer2--];
         }
-        for (int j = 0; j < nums1.length; j++) {
-            System.out.println(nums1[j] + "\n");
+        for (int j = 0; j < firstArray.length; j++) {
+            System.out.println(firstArray[j] + "\n");
         }
     }
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("Enter size of nums1: ");
+        System.out.println("Enter size of first sorted array: ");
         int m = s.nextInt();
-        System.out.println("Enter size of nums2: ");
+        System.out.println("Enter size of second sorted array: ");
         int n = s.nextInt();
-        System.out.println("Enter the sorted array nums1: ");
-        int nums1[] = new int[m + n];
+        System.out.println("Enter the elements of first sorted array: ");
+        int firstArray[] = new int[m + n];
         int i = 0;
         for(; i < m;i++) {
-            nums1[i] = s.nextInt();
+            firstArray[i] = s.nextInt();
         }
         for(; i < m + n;i++) {
-            nums1[i] = 0;
+            firstArray[i] = 0;
         }
-        System.out.println("Enter the sorted array nums2: ");
-        int nums2[] = new int[n];
+        System.out.println("Enter the elements for second sorted array: ");
+        int secondArray[] = new int[n];
         if (n > 0) {
             for (int j = 0; j < n; j++) {
-                nums2[j] = s.nextInt();
+                secondArray[j] = s.nextInt();
             }
         } else {
             System.out.println("ERROR: Second sorted array cannot be null");
             return;
         }
         System.out.println("The merged sorted array is: ");
-        merge(nums1, m, nums2, n);
+        merge(firstArray, m, secondArray, n);
     }
 }
