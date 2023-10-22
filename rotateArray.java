@@ -53,7 +53,7 @@ public class rotateArray {
             rightIndex--;
         }
     }
-    public static void rotate(int nums[], int k) {
+    public static void rotate(int[] nums, int k) {
         k = k % nums.length;
         if (k < 0) {
             k += nums.length;

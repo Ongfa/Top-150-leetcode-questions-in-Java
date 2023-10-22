@@ -31,7 +31,7 @@
 import java.util.Scanner;
 
 public class maxProfit {
-    public static int findMaxProfit(int prices[]) {
+    public static int findMaxProfit(int[] prices) {
         int buy = Integer.MAX_VALUE, maxProfit = Integer.MIN_VALUE;
         for(int i : prices) {
             buy = Math.min(buy, i);
