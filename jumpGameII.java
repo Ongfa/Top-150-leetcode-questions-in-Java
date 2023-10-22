@@ -33,6 +33,7 @@ import java.util.Scanner;
  */
 public class jumpGameII {
     public static int maximumJump(int[] nums) {
+        if (nums == null || nums.length == 0) return 0;
         int jumpCounter, i, maxJumpDst, position;
         jumpCounter = i = maxJumpDst = position = 0;
         int numsLength = nums.length;
