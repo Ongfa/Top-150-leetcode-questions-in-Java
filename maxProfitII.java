@@ -40,15 +40,14 @@ import java.util.Scanner;
 public class maxProfitII {
 
     public static int findMaxProfitForAllStocks(int[] prices) {
-        int i = 0, buyStock, sellStock, maxProfit = 0, len = prices.length - 1;
-        while (i < len) {
-            while (i < len && prices[i + 1] <= prices[i]) i++;
-            buyStock = prices[i];
-
-            while (i < len && prices[i + 1] > prices[i]) i++;
-            sellStock = prices[i];
-
-            maxProfit += sellStock - buyStock;
+        if (prices == null || prices.length <= 1) {
+            return 0;
+        }
+        int maxProfit = 0;
+        for(int i = 1; i < prices.length; i++) {
+            if (prices[i - 1] < prices[i]) {
+                maxProfit += prices[i] - prices[i - 1];
+            }
         }
         return maxProfit;
     }
