@@ -69,7 +69,7 @@ public class gasStation {
         }
         System.out.println("Enter the gas cost units: ");
         int[] cost = new int[n];
-        for (int i = 0;i < n ;i++){
+        for (int i = 0;i < n ;i++) {
             cost[i] = sc.nextInt();
         }
         int startPoint = canCompleteCircuit(gasStations, cost);
